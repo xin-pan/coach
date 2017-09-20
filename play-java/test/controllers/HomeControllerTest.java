@@ -20,7 +20,7 @@ public class HomeControllerTest extends WithApplication {
     }
 
     @Test
-    public void testIndex() {
+    public void should_get_index_page() {
         Http.RequestBuilder request = new Http.RequestBuilder()
                 .method(GET)
                 .uri("/");
@@ -29,4 +29,13 @@ public class HomeControllerTest extends WithApplication {
         assertEquals(OK, result.status());
     }
 
+    @Test
+    public void should_get_rest_sample() {
+        Http.RequestBuilder request = new Http.RequestBuilder()
+                .method(GET)
+                .uri("/rest-sample");
+
+        Result result = route(app, request);
+        assertEquals(OK, result.status());
+    }
 }

@@ -1,6 +1,9 @@
 package controllers;
 
-import play.mvc.*;
+import domain.User;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Result;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -18,4 +21,7 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
+    public Result restSample() {
+        return ok(Json.toJson(new User("id1", "panxin")));
+    }
 }
