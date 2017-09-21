@@ -1,0 +1,1 @@
+ALTER table mc_user ADD COLUMN "name" VARCHAR (255);
