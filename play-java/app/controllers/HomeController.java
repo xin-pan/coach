@@ -22,6 +22,12 @@ public class HomeController extends Controller {
     }
 
     public Result restSample() {
-        return ok(Json.toJson(new User("id1", "panxin")));
+        return ok(Json.toJson(new User(1l, "panxin")));
+    }
+
+    public Result createUser(){
+        User user = new User(1l, "panxin");
+        user.save();
+        return ok();
     }
 }
